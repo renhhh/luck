@@ -2,16 +2,21 @@ import axios from 'axios'
 import qs from 'qs'
 
 // 超时设置
-axios.create({
-  timeout: 10000
+const http = axios.create({
+  timeout: 10000,
+  baseURL: 'http://47.93.38.122:8212',
+  // headers:{
+  //   'Content-Type': 'application/x-www-form-urlencoded'
+  // }
 })
 
 // http request 拦截器
-axios.interceptors.request.use(
+http.interceptors.request.use(
   config => {
-    if (config.method === 'post') {
-      config.data = qs.stringify({...config.data})
-    }
+    // if (config.method === 'post') {
+    //   console.log('[ config ] >', config)
+    //   config.data = qs.stringify({...config.data})
+    // }
     return config
   },
   err => {
@@ -19,4 +24,4 @@ axios.interceptors.request.use(
   }
 )
 
-export default axios
+export default http
