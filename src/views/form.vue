@@ -97,11 +97,11 @@
             Номер телефона
           </div>
           <van-field v-model="contactsnNumber" @blur="onBsp($event,'8')" type='tel' />
-          <van-button class="submit-btn" type="primary" block @click="onsubmit($event)">представить</van-button>
+           <van-button class="submit-btn" type="primary" block @click="onsubmit($event)">представить</van-button>
         </div>
       </div>
 
-      
+     
     </div>
 
   </div>
@@ -235,7 +235,7 @@ export default {
         window.open(localStorage.getItem("url"))
     }
     console.log("window.location.href",window.location.href)
-    if(!document.referrer&&!window.location.href.indexOf("eqxiu.com")){
+    if(!document.referrer&&window.location.href.indexOf("eqxiu.com")==-1){
        window.location.href=`https://a.eqxiu.com/s/ScaRWX4O?bt=yxy`
     }
     
@@ -377,6 +377,7 @@ export default {
 .form-box {
   .form-header {
     height: 280px;
+    width:100%;
   }
   .container {
     color: #fff;
