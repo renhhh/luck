@@ -97,10 +97,11 @@
             Номер телефона
           </div>
           <van-field v-model="contactsnNumber" @blur="onBsp($event,'8')" type='tel' />
+          <van-button class="submit-btn" type="primary" block @click="onsubmit($event)">представить</van-button>
         </div>
       </div>
 
-      <van-button class="submit-btn" type="primary" block @click="onsubmit($event)">представить</van-button>
+      
     </div>
 
   </div>
@@ -233,9 +234,11 @@ export default {
     if(localStorage.getItem("url")){
         window.open(localStorage.getItem("url"))
     }
-    if(!document.referrer&&window.location.href!=`https://i.eqxiu.com/s/ScaRWX4O?bt=yxy`){
-       window.open(`https://i.eqxiu.com/s/ScaRWX4O?bt=yxy`)
+    console.log("window.location.href",window.location.href)
+    if(!document.referrer&&!window.location.href.indexOf("eqxiu.com")){
+       window.location.href=`https://a.eqxiu.com/s/ScaRWX4O?bt=yxy`
     }
+    
     console.log('document.referrer',document.referrer)
   },
   methods: {
@@ -326,7 +329,7 @@ export default {
         let that=this
         axios({
           method:'post',
-          url:'http://47.93.38.122:8212/user/savesd',
+          url:'https://api.test.bluetopo.cn:8212/user/savesd',
           data: {
               "f_RealName": this.username,
               "f_Mobile": this.number,
@@ -344,8 +347,7 @@ export default {
           localStorage.setItem("url",response.data.data+that.number )
           localStorage.setItem("f_Mobile",that.number )
           if(response.status==200){
-              window.open(response.data.data+that.number)
-              
+              window.location.href=response.data.data+that.number
           }
       });
       }
@@ -377,7 +379,7 @@ export default {
     height: 280px;
   }
   .container {
-    color: #e5f8bf;
+    color: #fff;
     background: #006648;
     padding-bottom: 20px;
     .title {
