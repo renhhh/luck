@@ -13,7 +13,7 @@
         <img class="qrcode-img" src="../assets/images/qrcode.jpg" alt="">
       </div>
       <div class="time font-color">Период предоставления кодов для получения выигрыша</div>
-      <div>2021/5/17 - 2021/06/15</div>
+      <div>2021/5/17 - 2021/6/15</div>
       <div class="time font-color">Внимание! </div>
       <div>Чтобы получить приз, необходимо предоставить код Вашего приза</div>
       <div class="confirm-btn">

@@ -6,7 +6,7 @@
       <p class="title">пользователя</p>
       <div class="form-item">
         <p class="form-desc">
-          Чтобы мы могли лучше обслуживать вас, пожалуйста, укажите следующую информацию правильно.
+          Чтобы мы могли лучше обслуживать вас,  пожалуйста, укажите следующую информацию правильно.
         </p>
         <div class="form-input " id="username">
           <div class="form-label">
@@ -37,14 +37,14 @@
           <van-field v-model="address" @blur="onBsp($event,'4')"  />
           <!-- <div :style="{ display: (label==4?block:none) }">
                    <van-picker title="адрес " show-toolbar :columns="repairlist" @confirm="onConfirm" @cancel="onCancel"
-              confirm-button-text='определение ' cancel-button-text='отмена ' />
+              confirm-button-text='Подтвердить ' cancel-button-text='отмена ' />
           </div> -->
           
           <!-- @click-input="isPickershow = true" -->
           <!-- <van-cell class="custom-cell" :value="address" @click="isPickershow = true"/>
           <van-popup v-model="isPickershow" round position="bottom" :style="{ height: '30%' }">
             <van-picker title="адрес " show-toolbar :columns="columns" @confirm="onConfirm" @cancel="onCancel"
-              confirm-button-text='определение ' cancel-button-text='отмена ' />
+              confirm-button-text='Подтвердить ' cancel-button-text='отмена ' />
           </van-popup> -->
             
         </div>
@@ -52,18 +52,18 @@
         <div class="form-input" id="repair">
           <div class="form-label">
             <span><b class="required-flag">*</b> Желаете обратиться с вопросом гарантийного обслуживания?</span>
-            <span :class="(this.repair=='пожалуйста'&&label=='5')?'error-tip':'hide'">этот пункт необходимо заполнить</span>
+            <span :class="(this.repair=='Выбрать'&&label=='5')?'error-tip':'hide'">этот пункт необходимо заполнить</span>
           </div>
           <!-- <van-field v-model="repair" @blur="onBsp($event,'5')" @focus="isrepairPickershow = true"/>
           <div :class="[isrepairPickershow==true ? 'show' : 'hide' ,]">
               <van-picker title="адрес " show-toolbar :columns="repairlist" @confirm="onConfirm" @cancel="onCancel"
-              confirm-button-text='определение ' cancel-button-text='отмена ' style="width:85%;height:300px" />
+              confirm-button-text='Подтвердить ' cancel-button-text='отмена ' style="width:85%;height:300px" />
           </div> -->
           
            <van-cell class="custom-cell" :value="repair" @click="isrepairPickershow = true"/>
             <van-popup v-model="isrepairPickershow" round position="bottom" :style="{ height: '51%' }">
             <van-picker title="адрес " show-toolbar :columns="repairlist" @confirm="onConfirm" @cancel="onCancel"
-              confirm-button-text='определение ' cancel-button-text='отмена ' />
+              confirm-button-text='Подтвердить ' cancel-button-text='отмена ' />
           </van-popup>
         </div>
         <div class="form-input" >
@@ -76,12 +76,12 @@
         <div class="form-input" id="display">
           <div class="form-label">
             <span><b class="required-flag">*</b>Желаете выездную демонстрацию наших товаров?</span>
-            <span :class="(this.display=='пожалуйста'&&label=='6')?'error-tip':'hide'">этот пункт необходимо заполнить</span>
+            <span :class="(this.display=='Выбрать'&&label=='6')?'error-tip':'hide'">этот пункт необходимо заполнить</span>
           </div>
           <van-cell class="custom-cell" :value="display" @click="isdisplayshow = true"/>
             <van-popup v-model="isdisplayshow" round position="bottom" :style="{ height: '50%' }">
             <van-picker title="адрес " show-toolbar :columns="displaylist" @confirm="onConfirms" @cancel="onCancel"
-              confirm-button-text='определение ' cancel-button-text='отмена ' />
+              confirm-button-text='Подтвердить ' cancel-button-text='отмена ' />
           </van-popup>
         </div>
         <div class="form-input">
@@ -120,10 +120,10 @@ export default {
       number: '', //手机号
       email: '', //邮箱
       address: '', //地址
-      repair: 'пожалуйста',
+      repair: 'Выбрать',
       repairINFO:"",
       repairlist:["Да","Нет"],
-      display: 'пожалуйста',
+      display: 'Выбрать',
       displaylist:["Да","Нет"],
       contacts: '', //联系人
       contactsnNumber: '', //联系人地址
@@ -221,10 +221,10 @@ export default {
       number: '', //手机号
       email: '', //邮箱
       address: '', //地址
-      repair: 'пожалуйста',
+      repair: 'Выбрать',
       repairINFO:"",
       repairlist:["Да","Нет"],
-      display: 'пожалуйста',
+      display: 'Выбрать',
       }
     }
   },
@@ -319,10 +319,10 @@ export default {
       } else if (this.address == '') {
         getID = 'address'
         this.label = 4
-      } else if (this.repair == 'пожалуйста') {
+      } else if (this.repair == 'Выбрать') {
         getID = 'repair'
         this.label = 5
-      } else if (this.display == 'пожалуйста') {
+      } else if (this.display == 'Выбрать') {
         getID = 'display'
         this.label = 6
       }else{

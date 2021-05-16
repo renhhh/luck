@@ -50,7 +50,7 @@
             </div>
             <div>
               <div class="present-time">Период проведения лотереи</div>
-              <div class="present-time">2021/5/17 - 2021/06/15</div>
+              <div class="present-time">2021/5/17 - 2021/6/15</div>
 
             </div>
           </div>
